@@ -9,15 +9,20 @@ This will return an array of objects of all the hotels in the database
 ### /api/add-hotel {POST}
 This will add a record if a json is provided.
 
-/* {
-    "hotelName": "WestINN",
-    "hotelLocation": "Lower Water street, Halifax NS",
-    "reviewsInStars": 5,
-    "totalRooms": 28,
-    "availableRooms": 2,
-    "createdAt": "2010-03-07T22:26:21.000+00:00"
+{
     
-  } */
+    "hotelName": "WestINN",
+    
+    "hotelLocation": "Lower Water street, Halifax NS",
+    
+    "reviewsInStars": 5,
+    
+    "totalRooms": 28,
+    
+    "availableRooms": 2,
+    
+    "createdAt": "2010-03-07T22:26:21.000+00:00"
+} 
 
   ### Running this project.
 
