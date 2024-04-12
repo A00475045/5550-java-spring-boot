@@ -1,0 +1,12 @@
+com\example\hotelapp\repository\BookingRepository.class
+com\example\hotelapp\controller\HotelsController.class
+com\example\hotelapp\repository\HotelsRepository.class
+com\example\hotelapp\repository\UserRepository.class
+com\example\hotelapp\HotelManagementApplication.class
+com\example\hotelapp\model\Hotel.class
+com\example\hotelapp\controller\IndexController.class
+com\example\hotelapp\controller\UsersController.class
+com\example\hotelapp\exception\ResourceNotFoundException.class
+com\example\hotelapp\model\User.class
+com\example\hotelapp\controller\BookingsController.class
+com\example\hotelapp\model\Booking.class

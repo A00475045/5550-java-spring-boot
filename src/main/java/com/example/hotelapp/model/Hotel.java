@@ -1,54 +1,43 @@
 package com.example.hotelapp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "hotel")
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 public class Hotel {
-    @Id
-//    @Column(name = "hotelID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long hotelID;
 
-//    @Column(name = "hotel-name")
-    @NotBlank
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "hotel_name", length = 50)
     private String hotelName;
 
-//    @Column(name = "hotel-location")
-    @NotBlank
-    private String hotelLocation;
+    @Column(name = "address", length = 255)
+    private String address;
 
+    @Column(name = "roomTypes")
+    private Integer roomTypes;
 
-//    @Column(name = "reviews-in-stars")
-    private Integer reviewsInStars;
+    @Column(name = "price")
+    private Integer price;
 
-//    @Column(name = "total_rooms")
-    private int totalRooms;
+    @Column(name = "total_rooms", nullable = false, columnDefinition = "int default 0")
+    private Integer totalRooms;
 
-//    @Column(name = "total_rooms")
-    private int availableRooms;
+    // Getters and Setters
 
-
-    @Column(nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
-    private Date createdAt;
-
-    public Long getHotelId() {
-        return hotelID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setHotelId(Long hotelID) {
-        this.hotelID = hotelID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getHotelName() {
@@ -59,44 +48,35 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public String getHotelLocation() {
-        return hotelLocation;
+    public String getAddress() {
+        return address;
     }
 
-    public void setHotelLocation(String hotelLocation) {
-        this.hotelLocation = hotelLocation;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public Integer getReviewsInStars() {
-        return reviewsInStars;
+    public Integer getRoomTypes() {
+        return roomTypes;
     }
 
-    public void setReviewsInStars(Integer reviewsInStars) {
-        this.reviewsInStars = reviewsInStars;
+    public void setRoomTypes(Integer roomTypes) {
+        this.roomTypes = roomTypes;
     }
 
-    public int getTotalRooms() {
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getTotalRooms() {
         return totalRooms;
     }
 
-    public void setTotalRooms(int totalRooms) {
+    public void setTotalRooms(Integer totalRooms) {
         this.totalRooms = totalRooms;
     }
-
-    public int getAvailableRooms() {
-        return availableRooms;
-    }
-
-    public void setAvailableRooms(int availableRooms) {
-        this.availableRooms = availableRooms;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
 }
